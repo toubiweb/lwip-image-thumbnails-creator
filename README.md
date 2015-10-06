@@ -3,10 +3,6 @@
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-- Reads the EXIF orientation tag from jpeg file
-- Automatically rotates/flips using [lwip](https://github.com/EyalAr/lwip)
-- Fails silently when EXIF data is not present or image is not a jpeg
-
 ## Install
 
 ```sh
