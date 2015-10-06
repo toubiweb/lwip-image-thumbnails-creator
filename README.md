@@ -30,10 +30,10 @@ return thumbnailsCreator.createThumbnail('image.jpg', {
 /* output:
     { 
         image: [Object], 
-        width: 150, 
-        height: 100, 
-        maxWidth: 150, 
-        maxHeight: 200, 
+        width: 100, 
+        height: 40, 
+        maxWidth: 100, 
+        maxHeight: 50, 
         outputpath: '/output/thumbnail-w150-h100.jpg' 
     }
 */
@@ -42,7 +42,7 @@ return thumbnailsCreator.createThumbnail('image.jpg', {
   // unexpected error
 });
 
-// multiple thumbnail
+// multiple thumbnails
 return thumbnailsCreator.createThumbnail('image.jpg', [{
     maxWidth: 100,
     maxHeight: 50
@@ -55,10 +55,10 @@ return thumbnailsCreator.createThumbnail('image.jpg', [{
 /* output:
     [ { 
         image: [Object], 
-        width: 150, 
-        height: 100, 
-        maxWidth: 150, 
-        maxHeight: 200, 
+        width: 100, 
+        height: 40, 
+        maxWidth: 100, 
+        maxHeight: 50, 
         outputpath: '/output/thumbnail-w150-h100.jpg' 
       }, ...]
 */
@@ -82,10 +82,10 @@ return thumbnailsCreator.createThumbnail('image.jpg', [{
 /* output:
     [ { 
         image: [Object], 
-        width: 150, 
-        height: 100, 
-        maxWidth: 150, 
-        maxHeight: 200
+        width: 100, 
+        height: 40, 
+        maxWidth: 100, 
+        maxHeight: 50, 
       }, ...]
 */
     
