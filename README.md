@@ -59,7 +59,7 @@ return thumbnailsCreator.createThumbnail('image.jpg', [{
         height: 40, 
         maxWidth: 100, 
         maxHeight: 50, 
-        outputpath: '/output/thumbnail-w150-h100.jpg' 
+        outputpath: '/output/thumbnail-w100-h40.jpg' 
       }, ...]
 */
     
