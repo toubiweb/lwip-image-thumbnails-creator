@@ -1,6 +1,6 @@
 {
   "name": "lwip-image-thumbnails-creator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Creates image thumbnails using lwip image manipulation library.",
   "homepage": "",
   "repository": "toubiweb/lwip-image-thumbnails-creator",
