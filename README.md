@@ -11,12 +11,13 @@ $ npm install lwip-image-thumbnails-creator --save
 
 ## Usage
 
+Single thumbnail:
+
 ```js
 var thumbnailsCreator = require('lwip-image-thumbnails-creator');
 
 var options = { outputbasepath: '/output/thumbnail.jpg'};
 
-// single thumbnail
 return thumbnailsCreator.createThumbnail('image.jpg', {
     maxWidth: 100,
     maxHeight: 50
@@ -38,7 +39,11 @@ return thumbnailsCreator.createThumbnail('image.jpg', {
   // unexpected error
 });
 
-// multiple thumbnails
+```
+
+Multiple thumbnails:
+
+```js
 return thumbnailsCreator.createThumbnail('image.jpg', [{
     maxWidth: 100,
     maxHeight: 50
@@ -63,33 +68,26 @@ return thumbnailsCreator.createThumbnail('image.jpg', [{
   // unexpected error
 });
 
+```
 
-// do not save output buffer to disk
-var options = { saveToDisk: false};
-return thumbnailsCreator.createThumbnail('image.jpg', [{
-    maxWidth: 100,
-    maxHeight: 50
-},{
-    maxWidth: 200,
-    maxHeight: 100
-}], options).then(function (res) {
-    // ok
-    console.log(res.thumbnails);
-/* output:
-    [ { 
-        image: [Object], 
-        width: 100, 
-        height: 40, 
-        maxWidth: 100, 
-        maxHeight: 50, 
-      }, ...]
-*/
-    
-}, function (err) {
-  // unexpected error
+You can also have more control about what append with the thumbnail buffer by setting the saveToDisk to false, then using directly the lwip image object:
+
+```js
+var options = {
+    saveToDisk: false
+};
+var inputpath = path.resolve(__dirname, './images/original-image.jpg');
+
+thumbnailsCreator.createThumbnail(inputpath, {
+    maxWidth: 600,
+    maxHeight: 300
+}, options).then(function (res) {
+
+var outputpath = path.resolve(__dirname, './images/output/thumbnail-exact-name.jpg');
+
+res.thumbnail.image.writeFile(outputpath, function(err){
+    // if (err) ...
 });
-
-
 ```
 
 ## Development
